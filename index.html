@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mail Archive Cleanup — Free up gigabytes from Apple Mail</title>
+<meta name="description" content="Archive old Apple Mail messages as standard .eml files to iCloud, OneDrive or a USB drive — then reclaim the disk space. Nothing is deleted, everything stays searchable.">
+<link rel="icon" href="assets/icon.png">
+
+<!-- social preview -->
+<meta property="og:title" content="Mail Archive Cleanup for macOS">
+<meta property="og:description" content="Free up gigabytes that Apple Mail is eating on your Mac — without deleting a single email.">
+<meta property="og:image" content="assets/cover.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+:root{
+  --bg:#0A1120; --bg2:#12213A; --card:rgba(255,255,255,.045);
+  --line:rgba(140,175,225,.18);
+  --tx:#EAF1FA; --tx2:#A9BCD4; --tx3:#7E93AE;
+  --blue:#3D9BFF; --green:#3DDC6B;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;
+  background:var(--bg); color:var(--tx); line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+a{color:var(--blue);text-decoration:none}
+
+/* ── hero ── */
+.hero{
+  position:relative; overflow:hidden; text-align:center;
+  padding:92px 0 76px;
+  background:radial-gradient(120% 90% at 50% 0%,#1B3A63 0%,var(--bg2) 46%,var(--bg) 100%);
+  border-bottom:1px solid var(--line);
+}
+.hero::after{
+  content:"";position:absolute;bottom:-320px;right:-180px;width:720px;height:720px;border-radius:50%;
+  background:radial-gradient(circle,rgba(52,199,89,.16) 0%,rgba(52,199,89,0) 68%);
+}
+.hero>*{position:relative;z-index:1}
+.appicon{width:128px;height:128px;border-radius:29px;
+  filter:drop-shadow(0 22px 46px rgba(0,0,0,.6));margin-bottom:26px}
+h1{font-size:clamp(38px,6.2vw,68px);font-weight:800;letter-spacing:-1.8px;line-height:1.08}
+h1 .g{color:var(--green)}
+.lede{margin:20px auto 0;max-width:660px;font-size:clamp(17px,2.3vw,22px);color:var(--tx2)}
+.cta{margin-top:38px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:15px 34px;border-radius:12px;font-size:17px;font-weight:700;
+  transition:transform .15s ease, box-shadow .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(180deg,#0A84FF,#0568D6);color:#fff;
+  box-shadow:0 10px 28px rgba(10,132,255,.4)}
+.btn-ghost{border:1px solid var(--line);color:var(--tx);background:var(--card)}
+.meta{margin-top:20px;font-size:14.5px;color:var(--tx3)}
+
+/* ── shot ── */
+.shot{padding:64px 0}
+.shot img{width:100%;border-radius:16px;border:1px solid var(--line);
+  box-shadow:0 30px 70px rgba(0,0,0,.5);display:block}
+
+/* ── sections ── */
+section{padding:70px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(27px,4vw,40px);font-weight:800;letter-spacing:-.9px;text-align:center}
+.sub{margin:14px auto 0;max-width:640px;text-align:center;color:var(--tx2);font-size:17.5px}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:22px;margin-top:48px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px}
+.num{width:36px;height:36px;border-radius:10px;background:rgba(61,155,255,.16);color:var(--blue);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;margin-bottom:16px}
+.step h3{font-size:19.5px;font-weight:700;margin-bottom:8px}
+.step p{color:var(--tx2);font-size:15.5px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:46px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px}
+.feat h3{font-size:17.5px;font-weight:700;margin-bottom:7px}
+.feat p{color:var(--tx2);font-size:15.5px}
+
+.safe{background:rgba(61,220,107,.05);border-color:rgba(61,220,107,.22)}
+.safe h3{color:var(--green)}
+
+.faq{max-width:760px;margin:44px auto 0}
+.qa{border-bottom:1px solid var(--line);padding:22px 0}
+.qa h3{font-size:17.5px;font-weight:700;margin-bottom:7px}
+.qa p{color:var(--tx2);font-size:15.5px}
+
+.req{max-width:620px;margin:40px auto 0;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:26px 30px}
+.req li{list-style:none;padding:9px 0;color:var(--tx2);font-size:16px;
+  border-bottom:1px solid rgba(140,175,225,.10)}
+.req li:last-child{border:0}
+.req b{color:var(--tx)}
+
+footer{padding:52px 0 64px;text-align:center;color:var(--tx3);font-size:14.5px;border-top:1px solid var(--line)}
+footer a{color:var(--tx2)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="appicon" src="assets/icon.png" alt="Mail Archive Cleanup icon">
+    <h1>Your Mail folder is<br><span class="g">quietly eating your disk</span></h1>
+    <p class="lede">
+      Years of messages and attachments pile up locally in Apple Mail.
+      Archive them safely to any drive — then take the space back.
+      <strong>Nothing is deleted.</strong>
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://vexzheng.gumroad.com/l/afquw">Get it — 7-day free trial</a>
+      <a class="btn btn-ghost" href="#how">See how it works</a>
+    </div>
+    <p class="meta">macOS 14 or later · One-time purchase · No account, no subscription</p>
+  </div>
+</header>
+
+<div class="wrap shot">
+  <img src="assets/cover.png" alt="Mail Archive Cleanup moves mail from Apple Mail to iCloud, OneDrive or USB">
+</div>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">Three steps. Your mail is copied out before anything is cleared.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Scan</h3>
+        <p>See exactly how much space Apple Mail takes on this Mac, broken down per mailbox and per year.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Archive</h3>
+        <p>Copy old mail — with attachments — to iCloud Drive, OneDrive, Dropbox, an external SSD or a USB stick.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Reclaim</h3>
+        <p>Once every copy is verified, clear the originals in Mail and get the disk space back.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What you get</h2>
+    <div class="grid">
+      <div class="feat">
+        <h3>Lossless .eml archive</h3>
+        <p>Byte-exact copies you can open in Apple Mail, Thunderbird or any mail client. No proprietary database, no lock-in, ever.</p>
+      </div>
+      <div class="feat">
+        <h3>Built-in mail library</h3>
+        <p>Browse and full-text search your entire archive instantly — sender, subject, body and attachments.</p>
+      </div>
+      <div class="feat">
+        <h3>Works offline</h3>
+        <p>Search keeps working when the USB drive is unplugged or you have no internet. The index lives on your Mac.</p>
+      </div>
+      <div class="feat">
+        <h3>Archive anywhere</h3>
+        <p>iCloud, OneDrive, Dropbox, external drives. Multiple locations merge into one searchable library.</p>
+      </div>
+      <div class="feat">
+        <h3>Attachments included</h3>
+        <p>Nothing is stripped or recompressed. The archived message is exactly what arrived in your inbox.</p>
+      </div>
+      <div class="feat">
+        <h3>Conversation grouping</h3>
+        <p>Replies and forwards fold into threads, so a long exchange reads as one conversation — just like Mail.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Built to be safe</h2>
+    <p class="sub">This app touches your mail archive. It is designed so a mistake can’t cost you an email.</p>
+    <div class="grid">
+      <div class="feat safe">
+        <h3>Never modifies Apple Mail</h3>
+        <p>The app only reads your mail and writes copies elsewhere. It never edits or deletes anything inside Mail.</p>
+      </div>
+      <div class="feat safe">
+        <h3>Every copy is verified</h3>
+        <p>After writing, each file is re-read from disk and byte-checked — a silent write failure can never pass as a backup.</p>
+      </div>
+      <div class="feat safe">
+        <h3>Conservative by default</h3>
+        <p>Nothing is marked “safe to remove” unless it is genuinely backed up — including messages still on the server that were never downloaded.</p>
+      </div>
+      <div class="feat safe">
+        <h3>Private by design</h3>
+        <p>No account, no server, no telemetry. Your mail never leaves your Mac except to the drive you choose.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Questions</h2>
+    <div class="faq">
+      <div class="qa">
+        <h3>Will I lose any email?</h3>
+        <p>No. The app copies messages out first and verifies every file byte by byte. Clearing the originals in Mail is a separate, explicit step you take yourself.</p>
+      </div>
+      <div class="qa">
+        <h3>Can I still read archived mail later?</h3>
+        <p>Yes. Browse and search everything inside the app, or open any archived message as a standard <code>.eml</code> file in Apple Mail or any other client.</p>
+      </div>
+      <div class="qa">
+        <h3>Why does it need Full Disk Access?</h3>
+        <p>macOS protects Apple Mail’s data folder. Without that permission no app can read your mail. You grant it once in System Settings — the app never sends anything anywhere.</p>
+      </div>
+      <div class="qa">
+        <h3>Is it a subscription?</h3>
+        <p>No. One-time purchase with a 7-day free trial. The license is verified locally, so it keeps working offline.</p>
+      </div>
+    </div>
+
+    <ul class="req">
+      <li><b>Requires</b> macOS 14 (Sonoma) or later</li>
+      <li><b>Works with</b> Apple Mail with local messages (IMAP, POP, On My Mac)</li>
+      <li><b>Needs</b> Full Disk Access, granted once in System Settings</li>
+      <li><b>Languages</b> English · 日本語 · 简体中文 · 繁體中文</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><a href="https://vexzheng.gumroad.com/l/afquw">Get Mail Archive Cleanup</a> · Questions? <a href="mailto:vexzheng@gmail.com">vexzheng@gmail.com</a></p>
+    <p style="margin-top:10px">© 2026 Bruce Zheng. Not affiliated with Apple Inc. Apple and Apple Mail are trademarks of Apple Inc.</p>
+  </div>
+</footer>
+
+</body>
+</html>
