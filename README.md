@@ -10,4 +10,4 @@ Apple Mail to any drive and frees up local disk space.
 
 1. Push this folder to a **public** GitHub repo.
 2. Repo **Settings → Pages → Source: Deploy from a branch → `main` / `/root`**.
-3. Live at `https://<username>.github.io/<repo>/` after ~1–2 min.
+3. Live at `https://mail.sffh.xyz/` after ~1–2 min.
