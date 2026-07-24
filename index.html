@@ -5,16 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mail Archive Cleanup — Free up gigabytes from Apple Mail</title>
 <meta name="description" content="Archive old Apple Mail messages as standard .eml files to any cloud folder or external drive, safely delete the originals to reclaim disk space, and still search every message inside the app.">
-<link rel="icon" href="assets/icon.png">
-
-<!-- social preview -->
+<link rel="icon" href="https://mail.sffh.xyz/assets/icon.png">
+<link rel="alternate" hreflang="en" href="https://mail.sffh.xyz/">
+<link rel="alternate" hreflang="ja" href="https://mail.sffh.xyz/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://mail.sffh.xyz/zh/">
+<link rel="alternate" hreflang="zh-Hant" href="https://mail.sffh.xyz/zh-Hant/">
+<link rel="alternate" hreflang="x-default" href="https://mail.sffh.xyz/">
 <meta property="og:title" content="Mail Archive Cleanup for macOS">
 <meta property="og:description" content="Back up Apple Mail to any cloud folder or USB drive, then delete those messages in Mail to reclaim the space. Nothing is lost — every archived email stays browsable and searchable in the app.">
 <meta property="og:url" content="https://mail.sffh.xyz/">
 <meta property="og:image" content="https://mail.sffh.xyz/assets/cover.png">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-
 <style>
 :root{
   --bg:#0A1120; --bg2:#12213A; --card:rgba(255,255,255,.045);
@@ -97,26 +100,24 @@ h2{font-size:clamp(27px,4vw,40px);font-weight:800;letter-spacing:-.9px;text-alig
 
 footer{padding:52px 0 64px;text-align:center;color:var(--tx3);font-size:14.5px;border-top:1px solid var(--line)}
 footer a{color:var(--tx2)}
-</style>
 
-<!-- analytics: GoatCounter (privacy-friendly, no cookies) -->
-<script data-goatcounter="https://brucezheng.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+.langbar{position:absolute;top:20px;right:0;left:0;text-align:center;z-index:2;
+  font-size:13.5px;color:var(--tx3);letter-spacing:.2px}
+.langbar a{color:var(--tx3);padding:0 7px}
+.langbar a.on{color:var(--tx);font-weight:700}
+</style>
+<script data-goatcounter="https://brucezheng.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 
 <header class="hero">
+  <div class="langbar"><a class="on" href="/">English</a> · <a class="" href="/ja/">日本語</a> · <a class="" href="/zh/">简体中文</a> · <a class="" href="/zh-Hant/">繁體中文</a></div>
   <div class="wrap">
-    <img class="appicon" src="assets/icon.png" alt="Mail Archive Cleanup icon">
+    <img class="appicon" src="https://mail.sffh.xyz/assets/icon.png" alt="Mail Archive Cleanup">
     <h1>Your Mail folder is<br><span class="g">quietly eating your disk</span></h1>
-    <p class="lede">
-      Years of messages and attachments pile up locally. Back them up to any cloud
-      folder or USB drive, then delete them in Mail to reclaim the space.
-      <strong>Nothing is lost</strong> — every archived email stays browsable and
-      searchable right here in the app.
-    </p>
+    <p class="lede">Years of messages and attachments pile up locally. Back them up to any cloud folder or USB drive, then delete them in Mail to reclaim the space. <strong>Nothing is lost</strong> — every archived email stays browsable and searchable right here in the app.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="MailArchiveCleanup-1.0.dmg" download>Download free — 7-day trial</a>
+      <a class="btn btn-primary" href="https://mail.sffh.xyz/MailArchiveCleanup-1.0.dmg" download>Download free — 7-day trial</a>
       <a class="btn btn-ghost" href="https://vexzheng.gumroad.com/l/afquw">Buy a license — $19</a>
     </div>
     <p class="meta">Free to download and try for 7 days. Buy a license only when the trial ends — no account, no subscription. macOS 14 or later.</p>
@@ -124,7 +125,7 @@ footer a{color:var(--tx2)}
 </header>
 
 <div class="wrap shot">
-  <img src="assets/cover.png" alt="Mail Archive Cleanup moves mail from Apple Mail to any cloud folder or external drive">
+  <img src="https://mail.sffh.xyz/assets/cover.png" alt="Mail Archive Cleanup moves mail from Apple Mail to any cloud folder or external drive">
 </div>
 
 <section id="how">
@@ -132,21 +133,9 @@ footer a{color:var(--tx2)}
     <h2>How it works</h2>
     <p class="sub">Three steps. Your mail is copied out before anything is cleared.</p>
     <div class="steps">
-      <div class="step">
-        <div class="num">1</div>
-        <h3>Scan</h3>
-        <p>See exactly how much space Apple Mail takes on this Mac, broken down per mailbox and per year.</p>
-      </div>
-      <div class="step">
-        <div class="num">2</div>
-        <h3>Archive</h3>
-        <p>Copy old mail — with attachments — to any folder you choose: iCloud Drive, OneDrive, Dropbox, Google Drive, an external SSD or a USB stick.</p>
-      </div>
-      <div class="step">
-        <div class="num">3</div>
-        <h3>Reclaim</h3>
-        <p>Once every copy is verified, clear the originals in Mail and get the disk space back.</p>
-      </div>
+      <div class="step"><div class="num">1</div><h3>Scan</h3><p>See exactly how much space Apple Mail takes on this Mac, broken down per mailbox and per year.</p></div>
+      <div class="step"><div class="num">2</div><h3>Archive</h3><p>Copy old mail — with attachments — to any folder you choose: iCloud Drive, OneDrive, Dropbox, Google Drive, an external SSD or a USB stick.</p></div>
+      <div class="step"><div class="num">3</div><h3>Reclaim</h3><p>Once every copy is verified, clear the originals in Mail and get the disk space back.</p></div>
     </div>
   </div>
 </section>
@@ -155,30 +144,12 @@ footer a{color:var(--tx2)}
   <div class="wrap">
     <h2>What you get</h2>
     <div class="grid">
-      <div class="feat">
-        <h3>Lossless .eml archive</h3>
-        <p>Byte-exact copies you can open in Apple Mail, Thunderbird or any mail client. No proprietary database, no lock-in, ever.</p>
-      </div>
-      <div class="feat">
-        <h3>Built-in mail library</h3>
-        <p>Browse and full-text search your entire archive instantly — sender, subject, body and attachments.</p>
-      </div>
-      <div class="feat">
-        <h3>Works offline</h3>
-        <p>Search keeps working when the drive is unplugged or you have no internet. The index lives on your Mac.</p>
-      </div>
-      <div class="feat">
-        <h3>Archive anywhere</h3>
-        <p>Any cloud folder that syncs to your Mac — iCloud, OneDrive, Dropbox, Google Drive and others — or any external drive. Multiple locations merge into one searchable library.</p>
-      </div>
-      <div class="feat">
-        <h3>Attachments included</h3>
-        <p>Nothing is stripped or recompressed. The archived message is exactly what arrived in your inbox.</p>
-      </div>
-      <div class="feat">
-        <h3>Conversation grouping</h3>
-        <p>Replies and forwards fold into threads, so a long exchange reads as one conversation — just like Mail.</p>
-      </div>
+      <div class="feat"><h3>Lossless .eml archive</h3><p>Byte-exact copies you can open in Apple Mail, Thunderbird or any mail client. No proprietary database, no lock-in, ever.</p></div>
+      <div class="feat"><h3>Built-in mail library</h3><p>Browse and full-text search your entire archive instantly — sender, subject, body and attachments.</p></div>
+      <div class="feat"><h3>Works offline</h3><p>Search keeps working when the drive is unplugged or you have no internet. The index lives on your Mac.</p></div>
+      <div class="feat"><h3>Archive anywhere</h3><p>Any cloud folder that syncs to your Mac — iCloud, OneDrive, Dropbox, Google Drive and others — or any external drive. Multiple locations merge into one searchable library.</p></div>
+      <div class="feat"><h3>Attachments included</h3><p>Nothing is stripped or recompressed. The archived message is exactly what arrived in your inbox.</p></div>
+      <div class="feat"><h3>Conversation grouping</h3><p>Replies and forwards fold into threads, so a long exchange reads as one conversation — just like Mail.</p></div>
     </div>
   </div>
 </section>
@@ -188,22 +159,10 @@ footer a{color:var(--tx2)}
     <h2>Built to be safe</h2>
     <p class="sub">This app touches your mail archive. It is designed so a mistake can’t cost you an email.</p>
     <div class="grid">
-      <div class="feat safe">
-        <h3>Never modifies Apple Mail</h3>
-        <p>The app only reads your mail and writes copies elsewhere. It never edits or deletes anything inside Mail.</p>
-      </div>
-      <div class="feat safe">
-        <h3>Every copy is verified</h3>
-        <p>After writing, each file is re-read from disk and byte-checked — a silent write failure can never pass as a backup.</p>
-      </div>
-      <div class="feat safe">
-        <h3>Conservative by default</h3>
-        <p>Nothing is marked “safe to remove” unless it is genuinely backed up — including messages still on the server that were never downloaded.</p>
-      </div>
-      <div class="feat safe">
-        <h3>Private by design</h3>
-        <p>No account, no server, no telemetry. Your mail never leaves your Mac except to the drive you choose.</p>
-      </div>
+      <div class="feat safe"><h3>Never modifies Apple Mail</h3><p>The app only reads your mail and writes copies elsewhere. It never edits or deletes anything inside Mail.</p></div>
+      <div class="feat safe"><h3>Every copy is verified</h3><p>After writing, each file is re-read from disk and byte-checked — a silent write failure can never pass as a backup.</p></div>
+      <div class="feat safe"><h3>Conservative by default</h3><p>Nothing is marked “safe to remove” unless it is genuinely backed up — including messages still on the server that were never downloaded.</p></div>
+      <div class="feat safe"><h3>Private by design</h3><p>No account, no server, no telemetry. Your mail never leaves your Mac except to the drive you choose.</p></div>
     </div>
   </div>
 </section>
@@ -212,28 +171,12 @@ footer a{color:var(--tx2)}
   <div class="wrap">
     <h2>Questions</h2>
     <div class="faq">
-      <div class="qa">
-        <h3>Will I lose any email?</h3>
-        <p>No. The app copies messages out first and verifies every file byte by byte. Clearing the originals in Mail is a separate, explicit step you take yourself.</p>
-      </div>
-      <div class="qa">
-        <h3>Can I still read archived mail later?</h3>
-        <p>Yes. Browse and search everything inside the app, or open any archived message as a standard <code>.eml</code> file in Apple Mail or any other client.</p>
-      </div>
-      <div class="qa">
-        <h3>Why does it need Full Disk Access?</h3>
-        <p>macOS protects Apple Mail’s data folder. Without that permission no app can read your mail. You grant it once in System Settings — the app never sends anything anywhere.</p>
-      </div>
-      <div class="qa">
-        <h3>How does the free trial work?</h3>
-        <p>Just download and open the app — the 7-day trial starts automatically, with every feature unlocked. No account, no payment, nothing to enter. When the trial ends, buy a license to keep using it; your archived mail stays readable regardless.</p>
-      </div>
-      <div class="qa">
-        <h3>Is it a subscription?</h3>
-        <p>No. One-time purchase, no recurring fee. The license is verified locally, so it keeps working offline and never expires.</p>
-      </div>
+      <div class="qa"><h3>Will I lose any email?</h3><p>No. The app copies messages out first and verifies every file byte by byte. Clearing the originals in Mail is a separate, explicit step you take yourself.</p></div>
+      <div class="qa"><h3>Can I still read archived mail later?</h3><p>Yes. Browse and search everything inside the app, or open any archived message as a standard <code>.eml</code> file in Apple Mail or any other client.</p></div>
+      <div class="qa"><h3>Why does it need Full Disk Access?</h3><p>macOS protects Apple Mail’s data folder. Without that permission no app can read your mail. You grant it once in System Settings — the app never sends anything anywhere.</p></div>
+      <div class="qa"><h3>How does the free trial work?</h3><p>Just download and open the app — the 7-day trial starts automatically, with every feature unlocked. No account, no payment, nothing to enter. When the trial ends, buy a license to keep using it; your archived mail stays readable regardless.</p></div>
+      <div class="qa"><h3>Is it a subscription?</h3><p>No. One-time purchase, no recurring fee. The license is verified locally, so it keeps working offline and never expires.</p></div>
     </div>
-
     <ul class="req">
       <li><b>Requires</b> macOS 14 (Sonoma) or later</li>
       <li><b>Works with</b> Apple Mail with local messages (IMAP, POP, On My Mac)</li>
@@ -245,7 +188,7 @@ footer a{color:var(--tx2)}
 
 <footer>
   <div class="wrap">
-    <p><a href="MailArchiveCleanup-1.0.dmg" download>Download the free trial</a> · <a href="https://vexzheng.gumroad.com/l/afquw">Buy a license</a> · Questions? <a href="mailto:vexzheng@gmail.com">vexzheng@gmail.com</a></p>
+    <p><a href="https://mail.sffh.xyz/MailArchiveCleanup-1.0.dmg" download>Download the free trial</a> · <a href="https://vexzheng.gumroad.com/l/afquw">Buy a license</a> · Questions? <a href="mailto:vexzheng@gmail.com">vexzheng@gmail.com</a></p>
     <p style="margin-top:10px">© 2026 Bruce Zheng. Not affiliated with Apple Inc. Apple and Apple Mail are trademarks of Apple Inc.</p>
   </div>
 </footer>
